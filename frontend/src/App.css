@@ -17,7 +17,7 @@ body {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 9999;
   box-shadow: 3px 3px -8px 3px #ddd;
 }
 
@@ -31,6 +31,8 @@ body {
     z-index: 100;
     background: #00000084;
     display: none;
+    transition: transform 0.4s ease;
+    transform: translateX(-100%);
   }
 
   .menu {
@@ -39,7 +41,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    transition: transform 1s ease-in-out;
     background: #fff;
     z-index: 200;
     flex-direction: column;
@@ -47,7 +48,9 @@ body {
     align-items: center;
     line-height: 30px;
   }
+
   .show__menu {
     display: block;
+    transform: translateX(0);
   }
 }

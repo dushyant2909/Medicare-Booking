@@ -25,39 +25,19 @@ const navlinks = [
 
 const Header = () => {
   //Navbar
-
-  const headerRef = useRef(null)
   const menuRef = useRef(null)
-
-  const handleStickyHeader = () => {
-    window.addEventListener('scroll', () => {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        headerRef.current.classList.add('sticky__header')
-      }
-      else {
-        headerRef.current.classList.remove('sticky__header')
-      }
-    })
-  }
-
-  useEffect(() => {
-    handleStickyHeader()
-
-    return () => window.removeEventListener('scroll', handleStickyHeader)
-  });
 
   const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
 
 
   return (
-    <header className='header flex items-center' ref={headerRef}>
+    <header className='header flex items-center sticky__header '>
       <div className="container">
-        <div className="flex items-center justify-around">
+        <div className="flex items-center justify-between lg:justify-around">
           {/* ----------- Logo ---------------- */}
           <Link to={'/'} className='p-1'>
             <img src={logo} alt="Company Logo" />
           </Link>
-
           {/*------------ Menu options ------------ */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <ul className="menu flex items-center gap-[2.2rem]">
