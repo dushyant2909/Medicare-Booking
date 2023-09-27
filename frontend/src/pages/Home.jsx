@@ -5,16 +5,19 @@ import heroImg03 from '../assets/images/hero-img03.png'
 import icon01 from '../assets/images/icon01.png'
 import icon02 from '../assets/images/icon02.png'
 import icon03 from '../assets/images/icon03.png'
+import featureImg from '../assets/images/feature-img.png'
 import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs'
 import About from '../components/About/About'
+import ServiceList from '../components/Servicess/ServiceList'
+import DoctorsList from '../components/Doctors/DoctorsList'
 
 const Home = () => {
   return (
     <>
       {/* ---------- Hero Section Outer ------------- */}
-      <section className='hero__section py-[30px] 2xl:h-[800px]'>
-        <div className="container lg:px-[125px] flex flex-col lg:flex-row gap-[60px] lg:gap-[90px] items-center justify-between">
+      <section className='hero__section 2xl:h-[800px]'>
+        <div className="container flex flex-col lg:flex-row gap-[60px] lg:gap-[90px] items-center justify-between">
           {/* ---------Hero Content Left part----------- */}
           <div>
             {/* ----------- Hero content headings----------- */}
@@ -66,7 +69,7 @@ const Home = () => {
       {/* ----------Hero Section ends---------- */}
 
       {/* --------- Another hero part starts ----------- */}
-      <section className='lg:pt-10 '>
+      <section>
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
             <h2 className="heading text-center">Elevating Healthcare Excellence</h2>
@@ -142,12 +145,70 @@ const Home = () => {
       {/* --------- Services Section -------- */}
       <section>
         <div className="container">
-          <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our Medical Services</h2>
+          <div className="xl:w-[470px] lg:mt-5 mx-auto">
+            <h2 className="heading text-center text-[46px]">Our Medical Services</h2>
             <p className="text__para text-center text-semibold">"Providing unparalleled healthcare to all, our health system offers world-class care."</p>
+          </div>
+
+          <ServiceList />
+
+        </div>
+      </section>
+
+      {/* --------- Feature Section --------- */}
+      <section>
+        <div className="container">
+          <div className="flex items-center gap-10 justify-between flex-col lg:flex-row">
+            {/* ----------- Feature Content ---------- */}
+            <div className="xl:w-[670px]">
+              <h2 className="heading">
+                Get Virtual treatment <br /> anytime.
+              </h2>
+
+              <ul className='pl-4'>
+                <li className="text__para">
+                  1. Schedule appointments directly.
+                </li>
+                <li className="text__para">
+                  2. Discover Your Physician's Office.
+                </li>
+                <li className="text__para">
+                  3. Explore Physicians Accepting New Patients - Book Your Appointment Online.
+                </li>
+              </ul>
+
+              <div className='flex justify-center lg:justify-start'>
+                <div>
+                  <Link to={'/'} className='mx-auto'>
+                    <button className="btn">Learn More</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* ----------- Feature Image ------------- */}
+            <div className="relative px-4 z-10 w-[380px] h-[380px] flex justify-end">
+              <img src={featureImg} alt="doctor image" />
+            </div>
           </div>
         </div>
       </section>
+      {/* --------- Feature Section Ends ------ */}
+
+      {/* --------- Our Great doctors ----------- */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">Our great Doctors</h2>
+            <p className="text__para text-center">
+              World-class care for everyone. Our health system offers unmatched,
+              expert health care.
+            </p>
+          </div>
+          <DoctorsList />
+        </div>
+      </section>
+      {/* ---------- Doctors ends ------------ */}
+
     </>
   )
 }
