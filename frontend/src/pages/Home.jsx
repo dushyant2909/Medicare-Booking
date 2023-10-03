@@ -6,11 +6,14 @@ import icon01 from '../assets/images/icon01.png'
 import icon02 from '../assets/images/icon02.png'
 import icon03 from '../assets/images/icon03.png'
 import featureImg from '../assets/images/feature-img.png'
+import faqImg from '../assets/images/faq-img.png'
 import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs'
 import About from '../components/About/About'
 import ServiceList from '../components/Servicess/ServiceList'
 import DoctorsList from '../components/Doctors/DoctorsList'
+import FAQlist from '../components/FAQ/faqList'
+import Testimonial from '../components/Testimonial/Testimonial'
 
 const Home = () => {
   return (
@@ -208,6 +211,38 @@ const Home = () => {
         </div>
       </section>
       {/* ---------- Doctors ends ------------ */}
+
+      {/* ---------- FAQ Section ------------- */}
+      <section>
+        <div className="container">
+          <div className="flex justify-between gap-5">
+            <div className="w-1/2  hidden md:flex justify-center items-start">
+              <img src={faqImg} className='h-[500px]' alt="Frequently asked question section image" />
+            </div>
+
+            <div className="w-full md:w-1/2">
+              <h2 className="!text-[30px] lg:!text-[35px] heading text-center lg:text-start">Frequently Asked Questions by Our Beloved Patients</h2>
+              <FAQlist />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ---------- FAQ Section Ends ------------- */}
+
+      {/* ---------- Testimonial ------------- */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">What our Patients say</h2>
+            <p className="text__para text-center">
+              World-class care for everyone. Our health system offers unmatched,
+              expert health care.
+            </p>
+          </div>
+          <Testimonial />
+        </div>
+      </section>
+      {/* ------------- Testimonial ends --------- */}
 
     </>
   )
