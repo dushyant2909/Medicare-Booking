@@ -26,9 +26,13 @@ const navlinks = [
 const Header = () => {
   //Navbar
   const menuRef = useRef(null)
+  const slidemenuRef = useRef(null)
 
-  const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
-
+  const toggleMenu = () => {
+    menuRef.current.classList.toggle('show__menu')
+    slidemenuRef.current.classList.toggle('slide__menu')
+  }
+  // Css in App.css
 
   return (
     <header className='header px-3 lg:px-0 flex items-center sticky__header '>
@@ -39,7 +43,7 @@ const Header = () => {
         </Link>
         {/*------------ Menu options ------------ */}
         <div className="navigation" ref={menuRef} onClick={toggleMenu}>
-          <ul className="menu flex items-center gap-[2.2rem]">
+          <ul className="menu flex items-center gap-[2.2rem]" ref={slidemenuRef}>
             {
               navlinks.map((item, index) => (
                 <li key={index} >
@@ -67,7 +71,7 @@ const Header = () => {
             <button className='bg-primaryColor py-2 px-5 text-white h-[40px] font-[600] flex items-center justify-center rounded-[50px]'>Login</button>
           </Link>
 
-          {/* Shorteer devices side menu option in navbar */}
+          {/* Shorter devices side menu option in navbar */}
           <span className='md:hidden' onClick={toggleMenu}>
             <BiMenu className='w-6 h-6 cursor-pointer'></BiMenu>
           </span>
